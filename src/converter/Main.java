@@ -24,8 +24,8 @@ public class Main extends Frame
 		});
 
 		setVisible(true);
-	    Insets insets = getInsets();
-	    setVisible(false);
+		Insets insets = getInsets();
+		setVisible(false);
 		setSize(WID + insets.left + insets.right, HEI + insets.top + insets.bottom);
 
 		MyCanvas mc = new MyCanvas();

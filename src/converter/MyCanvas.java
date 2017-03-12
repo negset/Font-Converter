@@ -76,7 +76,7 @@ public class MyCanvas extends Canvas implements Runnable
 		imgBuf = createImage(Main.WID, Main.HEI);
 		gBuf = imgBuf.getGraphics();
 
-		for (; ; )
+		for (;;)
 		{
 			gBuf.setColor(Color.white);
 			gBuf.fillRect(0, 0, Main.WID, Main.HEI);
@@ -100,14 +100,12 @@ public class MyCanvas extends Canvas implements Runnable
 					gBuf.drawString("位置調整を行ってください", 80, 30);
 					gBuf.drawString("移動 : 十字キー", 120, Main.HEI - 45);
 					gBuf.drawString("決定 : Enter", 120, Main.HEI - 30);
-					gBuf.drawRect((Main.WID - spriteSize) / 2,
-							(Main.HEI - spriteSize) / 2,
+					gBuf.drawRect((Main.WID - spriteSize) / 2, (Main.HEI - spriteSize) / 2,
 							spriteSize, spriteSize);
 
 					gBuf.setFont(font);
 					int w = gBuf.getFontMetrics(font).charWidth('あ');
-					gBuf.drawString("あ",
-							(Main.WID - w - spriteSize) / 2 + offsetX,
+					gBuf.drawString("あ", (Main.WID - w - spriteSize) / 2 + offsetX,
 							(Main.HEI - spriteSize) / 2 + offsetY);
 
 					offsetX -= keyInput.keyLeft;
@@ -164,7 +162,7 @@ public class MyCanvas extends Canvas implements Runnable
 			FileReader fr = new FileReader(name);
 			BufferedReader br = new BufferedReader(fr);
 			String line;
-			while((line=br.readLine()) != null)
+			while ((line = br.readLine()) != null)
 			{
 				if (line.startsWith("glyphMax="))
 				{
@@ -187,7 +185,7 @@ public class MyCanvas extends Canvas implements Runnable
 			br.close();
 			fr.close();
 		}
-		catch(Exception e)
+		catch (Exception e)
 		{
 			e.printStackTrace();
 		}
